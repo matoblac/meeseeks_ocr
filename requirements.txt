@@ -1,0 +1,5 @@
+# Core OCR dependencies
+pytesseract           # Python bindings for Tesseract
+pdf2image             # Converts PDF pages to images (uses poppler)
+Pillow                # Imaging support required by pdf2image
+argparse              # Command-line argument parsing
