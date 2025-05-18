@@ -21,8 +21,6 @@ def preprocess_image(pil_image: Image.Image) -> np.ndarray:
     # Convert to grayscale
     img = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 
-    # Step 1: Remove noise
-    img = cv2.GaussianBlur(img, (3, 3), 0)
 
     # Step 2: Adaptive thresholding
     img = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2)
@@ -30,9 +28,6 @@ def preprocess_image(pil_image: Image.Image) -> np.ndarray:
     # Step 3: Resize up
     img = cv2.resize(img, None, fx=1.5, fy=1.5, interpolation=cv2.INTER_LINEAR)
 
-    # Step 4: Dilation and make charaters bolder
-    kernel = np.ones((1, 1), np.uint8)
-    img = cv2.dilate(img, kernel, iterations=1)
 
     return Image.fromarray(img)
 
