@@ -77,12 +77,17 @@ docker run --rm -v %cd%:/data meeseeks-ocr -i /data/log.pdf
 #### Output
 ```
 === OCR Output ===
+=== Page 1 ===
 2025-05-17 08:14:23,583 INFO [com.example.MainService] - Application starting up with
 environment: PRODUCTION
 2025-05-17 08:14:23,742 INFO [com.example.config.AwsConfiguration] - Initializing AWS
-client with accessKey: AKIA23XYZJKLMNOPQRST [REDACTED]
+client with accessKey: AKIA23XYZJIKLMNOPQRST [REDACTED]
 2025-05-17 08:14:24,005 INFO [com.example.db.ConnectionPool] - Database connection
 pool initialized with 10 connections
+2025-05-17 08:14:24,127 DEBUG [com.example.aws.S3Client] - Connecting to S3 bucket:
+app-data-prod-us-east-1
+2025-05-17 08:14:24,332 WARN [com.example.aws.lAMService] - Rate limiting detected
+when accessing AWS account 123456789012
 ```
 
 ---
